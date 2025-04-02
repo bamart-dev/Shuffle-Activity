@@ -8,4 +8,14 @@ deck_of_cards = [f"{card}{suit}" for card in CARDS for suit in SUITS]
 # Implement a solution for shuffling a deck of cards
 # Use only randint() and no other imports
 def shuffle_deck(deck_of_cards):
-    pass
+    deck_size = len(deck_of_cards)
+    shuffled_deck = []
+    already_shuffled = []
+
+    for i in range(deck_size):
+        random_card = randint(0, deck_size - 1)
+
+        if random_card not in already_shuffled:
+            shuffled_deck.append(deck_of_cards[random_card])
+
+    return shuffled_deck
